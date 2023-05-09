@@ -1,16 +1,18 @@
-let diceNumber = 1;
+let diceNumber: number = 1;
 
-const rollDice = () => {
+const rollDice = (): number => {
   const result = Math.floor(Math.random() * 6 + 1);
   return result;
 }
 
-const onClickButton = () => {
+const onClickButton = (): void => {
   diceNumber = rollDice();
 
   const element = document.getElementById("dice-number");
-  element.innerText = diceNumber;
+  if (element) {
+    element.innerText = diceNumber.toString();
+  }
 }
 
 const rollButton = document.getElementById("roll-button");
-rollButton.addEventListener("click", onClickButton);
+rollButton?.addEventListener("click", onClickButton);
