@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&display=swap');
+
+:root {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #eee;
+}
+
+body {
+  margin: 5% 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+header > img {
+  width: 140px;
+}
+
+.card {
+  margin: 10% 20%;
+  padding: 2%;
+  border: solid 1px #888;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dice-number {
+  font-size: 2rem;
+}
+
+#roll-button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  background: #333;
+  color: #fff;
+  border-radius: 25px;
+  border: solid 1px #333;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+#roll-button:hover {
+  cursor: pointer;
+}
+
+#roll-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.3) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+#roll-button:hover::before {
+  animation: shine 0.7s;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
